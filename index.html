@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Priyangka ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#2d0b45,#5e2b97,#8e44ad);
+min-height:100vh;
+overflow-x:hidden;
+color:white;
+text-align:center;
+}
+
+.hidden{
+display:none !important;
+}
+
+/* Hearts */
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:floatUp 8s linear infinite;
+opacity:.7;
+}
+
+@keyframes floatUp{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+/* Lock Screen */
+#lockScreen{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.gift-lock{
+font-size:100px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-10px);}
+}
+
+#countdown{
+font-size:1.8rem;
+margin-top:20px;
+}
+
+/* Main Content */
+#mainContent{
+padding:20px;
+}
+
+h1{
+margin-top:20px;
+font-size:3rem;
+}
+
+/* Slideshow */
+.slideshow{
+width:90%;
+max-width:500px;
+margin:20px auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 0 20px rgba(255,255,255,.4);
+}
+
+.slideshow img{
+width:100%;
+display:block;
+}
+
+/* Letter */
+#letter{
+width:90%;
+max-width:800px;
+margin:30px auto;
+font-size:1.2rem;
+line-height:1.8;
+min-height:200px;
+}
+
+/* Cake */
+.cake{
+margin:40px auto;
+position:relative;
+width:250px;
+}
+
+.layer{
+margin:auto;
+background:#d291ff;
+border:3px solid white;
+}
+
+.layer1{
+width:250px;
+height:80px;
+}
+
+.layer2{
+width:190px;
+height:60px;
+}
+
+.layer3{
+width:130px;
+height:50px;
+}
+
+.candles{
+position:absolute;
+top:-55px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:20px;
+}
+
+.candle{
+width:10px;
+height:40px;
+background:white;
+position:relative;
+}
+
+.flame{
+width:15px;
+height:20px;
+background:gold;
+border-radius:50%;
+position:absolute;
+top:-18px;
+left:-2px;
+animation:flicker .3s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:scale(1);}
+to{transform:scale(1.2);}
+}
+
+button{
+padding:12px 25px;
+font-size:1rem;
+border:none;
+border-radius:30px;
+cursor:pointer;
+margin-top:20px;
+}
+
+/* Gift */
+#giftSection{
+margin-top:40px;
+}
+
+#giftBox{
+font-size:120px;
+cursor:pointer;
+animation:bounce 2s infinite;
+}
+
+#surprise{
+display:none;
+width:90%;
+max-width:700px;
+margin:20px auto;
+padding:20px;
+background:rgba(255,255,255,.15);
+border-radius:20px;
+backdrop-filter:blur(10px);
+}
+
+/* Confetti */
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+top:-10px;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(720deg);
+}
+}
+
+.firework{
+position:fixed;
+font-size:35px;
+animation:explode 1.5s ease-out forwards;
+}
+
+@keyframes explode{
+from{
+transform:scale(0);
+opacity:1;
+}
+to{
+transform:scale(4);
+opacity:0;
+}
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+<source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<div id="lockScreen">
+<div class="gift-lock">🎁</div>
+<h1>A Special Surprise Awaits You</h1>
+<p>For Khundrakpam Priyangka ❤️</p>
+<div id="countdown"></div>
+</div>
+
+<div id="mainContent" class="hidden">
+
+<h1>🎂 Happy Birthday Priyangka 🎂</h1>
+
+<div class="slideshow">
+<img src="cover.jpeg" alt="Our Memory">
+</div>
+
+<div id="letter"></div>
+
+<div class="cake">
+<div class="candles">
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+<div class="candle"><div class="flame"></div></div>
+</div>
+
+<div class="layer layer3"></div>
+<div class="layer layer2"></div>
+<div class="layer layer1"></div>
+</div>
+
+<button onclick="startMic()">
+🎤 Blow The Candles
+</button>
+
+<div id="giftSection" class="hidden">
+<div id="giftBox" onclick="openGift()">🎁</div>
+
+<div id="surprise">
+<h2>Happy Birthday Priyangka ❤️</h2>
+<br>
+
+<p>
+I just want to tell you that I will always support you and always love you.
+<br><br>
+No matter what challenges come your way, believe in yourself and keep moving forward.
+Do your best in life, chase your dreams, and find whatever your heart truly wants to do.
+<br><br>
+I will always be cheering for you and wishing for your happiness.
+<br><br>
+May your smile never fade and may all your dreams come true.
+<br><br>
+With all my love,
+<br><br>
+<b>Punshiba Moirangthem ❤️</b>
+</p>
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+/* Floating Hearts */
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="💜";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(20+Math.random()*20)+"px";
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),8000);
+},600);
+
+/* Unlock Date */
+const unlockDate = new Date("June 14, 2026 00:00:00");
+
+function updateCountdown(){
+
+const now = new Date();
+
+if(now >= unlockDate){
+document.getElementById("lockScreen").classList.add("hidden");
+document.getElementById("mainContent").classList.remove("hidden");
+
+typeLetter();
+
+return;
+}
+
+let diff=unlockDate-now;
+
+let d=Math.floor(diff/(1000*60*60*24));
+let h=Math.floor(diff%(1000*60*60*24)/(1000*60*60));
+let m=Math.floor(diff%(1000*60*60)/(1000*60));
+let s=Math.floor(diff%(1000*60)/1000);
+
+document.getElementById("countdown").innerHTML=
+`${d} Days ${h} Hours ${m} Minutes ${s} Seconds`;
+}
+
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+/* Letter Typing */
+const text=
+`Dear Priyangka ❤️,
+
+Today is your special day and I just want you to know how much you mean to me.
+
+Thank you for the smiles, the memories, and all the beautiful moments we've shared together.
+
+May this year bring you happiness, success, peace, and everything your heart desires.
+
+Happy Birthday once again.
+
+Love,
+Punshiba ❤️`;
+
+let i=0;
+
+function typeLetter(){
+
+const area=document.getElementById("letter");
+
+function write(){
+
+if(i<text.length){
+area.innerHTML+=text.charAt(i);
+i++;
+setTimeout(write,40);
+}
+}
+
+write();
+}
+
+/* Mic Detection */
+async function startMic(){
+
+document.getElementById("music").play();
+
+try{
+
+const stream=
+await navigator.mediaDevices.getUserMedia({audio:true});
+
+const audioContext=
+new (window.AudioContext || window.webkitAudioContext)();
+
+const analyser=audioContext.createAnalyser();
+
+const mic=
+audioContext.createMediaStreamSource(stream);
+
+mic.connect(analyser);
+
+const data=new Uint8Array(analyser.frequencyBinCount);
+
+function detect(){
+
+analyser.getByteFrequencyData(data);
+
+let avg=data.reduce((a,b)=>a+b)/data.length;
+
+if(avg>40){
+
+document.querySelectorAll(".flame").forEach(f=>{
+f.style.display="none";
+});
+
+celebrate();
+
+return;
+}
+
+requestAnimationFrame(detect);
+}
+
+detect();
+
+}catch(e){
+alert("Please allow microphone access.");
+}
+}
+
+/* Celebration */
+function celebrate(){
+
+for(let i=0;i<150;i++){
+
+let c=document.createElement("div");
+
+c.className="confetti";
+
+c.style.left=Math.random()*100+"vw";
+
+c.style.background=
+`hsl(${Math.random()*360},100%,50%)`;
+
+c.style.animationDuration=
+(2+Math.random()*3)+"s";
+
+document.body.appendChild(c);
+}
+
+for(let i=0;i<25;i++){
+
+let f=document.createElement("div");
+
+f.className="firework";
+
+f.innerHTML="✨";
+
+f.style.left=Math.random()*100+"vw";
+f.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(f);
+
+setTimeout(()=>f.remove(),1500);
+}
+
+document.getElementById("giftSection")
+.classList.remove("hidden");
+}
+
+/* Gift */
+function openGift(){
+
+document.getElementById("giftBox").innerHTML="💖";
+
+document.getElementById("surprise").style.display="block";
+}
+</script>
+
+</body>
+</html>
